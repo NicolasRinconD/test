@@ -1,0 +1,59 @@
+<head>
+  <title>My first app in meteor</title>
+</head>
+
+<body>
+  <h1>Reto</h1>
+  {{> organizacion}}
+</body>
+
+
+
+<template name="organizacion">
+    
+    <h3>Crea un Evento </h3>
+    <form>
+      <label for="fname"> Nombre </label>
+      <input type="text" name="fname" id="fname"><br>
+      <label for="fdescripcion"> Descripcion </label>
+      <input type="text" name="fdescripcion" id="fdescripcion"><br>
+      <label for="fresponsable"> Responsable </label>
+      <input type="text" name="fresponsable" id="fresponsable"><br>
+      <label for="fechaInicio"> Fecha de Inicio </label>
+      <input type="date" name="fechaInicio" id="fechaInicio"><br>
+      <label for="fechaFinal"> Fecha Final </label>
+      <input type="date" name="fechaFinal" id="fechaFinal"><br>
+      <label for="ubicacion"> Ubicacion </label>
+      <input type="text" name="ubicacion" id="ubicacion"><br>
+
+      <input type="submit" value="submit">
+    </form>
+    <hr>
+    <h4> Lista de Eventos </h4>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Responsable</th>
+          <th>Fecha de Inicio</th>
+          <th>Fecha de Término</th>
+          <th>Ubicación</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each organizacionesCollection}}
+        <tr>
+        <td>{{nombre}}</td> 
+        <td>{{descripcion}}</td> 
+        <td>{{responsable}}</td> 
+        <td>{{fechaInicio}}</td> 
+        <td>{{fechaFinal}}</td>
+        <td>{{ubicacion}}</td>
+        </tr>
+       {{/each}}
+      </tbody>
+    </table>
+   
+
+</template>
